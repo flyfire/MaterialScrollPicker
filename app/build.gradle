@@ -3,14 +3,14 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
-  compileSdkVersion 28
+  compileSdkVersion 33
   defaultConfig {
     applicationId "com.eddystudio.horizontalscrollpicker"
     minSdkVersion 23
     targetSdkVersion 28
     versionCode 1
     versionName "1.0"
-    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     dataBinding {
       enabled = true
@@ -26,20 +26,35 @@ android {
 
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
-  implementation 'androidx.appcompat:appcompat:1.0.0-rc01'
-  implementation 'android.arch.navigation:navigation-fragment:1.0.0-alpha05'
-  implementation 'android.arch.navigation:navigation-ui:1.0.0-alpha05'
-  implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
-  implementation 'com.google.android.material:material:1.0.0-rc01'
+  implementation 'androidx.appcompat:appcompat:1.2.0'
+//  implementation 'android.arch.navigation:navigation-fragment:1.0.0-alpha05'
+//  implementation 'android.arch.navigation:navigation-ui:1.0.0-alpha05'
+  implementation 'androidx.constraintlayout:constraintlayout:2.0.0'
+  implementation 'com.google.android.material:material:1.0.0'
   implementation 'com.github.eddykwang:quickrecyclerviewadapter:1.02'
-  testImplementation 'junit:junit:4.12'
-  androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
-  androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+//  testImplementation 'junit:junit:4.12'
+//  androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
+//  androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
   implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-  kapt "com.android.databinding:compiler:3.1.4"
+//  kapt "com.android.databinding:compiler:3.1.4"
   implementation project(":scrollpicker")
 
 }
 repositories {
-  mavenCentral()
+  google()
+  jcenter()
+  maven { url 'https://repo1.maven.org/maven2/' }
+  maven { url 'https://jitpack.io' }
+  maven {
+    url 'https://maven.aliyun.com/nexus/content/groups/public/'
+  }
+  maven {
+    url 'https://maven.aliyun.com/nexus/content/repositories/jcenter'
+  }
+  maven {
+    url 'https://maven.aliyun.com/nexus/content/repositories/google'
+  }
+  maven {
+    url 'https://maven.aliyun.com/nexus/content/repositories/gradle-plugin'
+  }
 }
