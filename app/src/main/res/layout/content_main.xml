@@ -31,6 +31,15 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/scrollpickerview"/>
 
+  <com.eddystudio.scrollpicker.SolarexScrollPickerView
+      android:id="@+id/pk_solarex"
+      android:layout_width="match_parent"
+      android:layout_height="100dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/pk2"
+      android:layout_marginTop="16dp"/>
+
 
   <com.eddystudio.scrollpicker.ScrollPickerView
     android:id="@+id/pk_vertical"
@@ -46,7 +55,7 @@
     app:centerPointerWidth="420dp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/pk2"/>
+    app:layout_constraintTop_toBottomOf="@+id/pk_solarex"/>
 
   <androidx.appcompat.widget.AppCompatTextView
     android:id="@+id/selected_item_tv"

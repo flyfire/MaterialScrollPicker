@@ -9,6 +9,7 @@ import com.eddystudio.scrollpicker.OnItemSelectedListener
 import com.eddystudio.scrollpicker.OnItemUnselectedListener
 import com.eddystudio.scrollpicker.ScrollPickerAdapter
 import com.eddystudio.scrollpicker.ScrollPickerView
+import com.eddystudio.scrollpicker.SolarexScrollPickerView
 
 
 class MainActivity : AppCompatActivity() {
@@ -84,6 +85,30 @@ class MainActivity : AppCompatActivity() {
           }
         })
         .build()
+
+      val solarexPickerView = findViewById<SolarexScrollPickerView>(R.id.pk_solarex);
+      val solarexAdapter = ScrollPickerAdapter(l2, R.layout.item_layout, BR.viewmodel);
+      solarexPickerView.setup(
+          solarexAdapter,
+          object : ScrollPickerAdapter.OnItemClickListener, OnItemSelectedListener {
+              override fun onClicked(view: View, position: Int) {
+
+              }
+
+              override fun onSelected(view: View, layoutPosition: Int) {
+                  tv.text = l2[layoutPosition].obsIndex.get()
+                  view.findViewById<AppCompatTextView>(R.id.scroll_view_tv)
+                      .setTextColor(getColor(android.R.color.white))
+              }
+
+          },
+          object : OnItemUnselectedListener {
+              override fun unselected(view: View) {
+                  view.findViewById<AppCompatTextView>(R.id.scroll_view_tv)
+                      .setTextColor(getColor(android.R.color.holo_green_light))
+              }
+          }
+      );
 
 
 //**************************************************************************************************
